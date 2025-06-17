@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const serverless = require('serverless-http');
 const app = express();
 const PORT = 8000;
 
@@ -42,7 +43,5 @@ app.get('/:rapperName', (req, res) => {
 
 // 5) upload to vercel serverless functions
 
-app.listen(PORT, () => {
-  console.log(`server is running ${PORT}`);
-});
+module.exports = serverless(app);
 
