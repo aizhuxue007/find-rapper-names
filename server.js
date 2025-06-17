@@ -26,7 +26,9 @@ app.get('/', (req, res) => {
 });
 
 // 2) add /rappers route
-console.log(rappers);
+app.get('/rappers', (req, res) => {
+  res.json(rappers);
+});
 // 3) add /:specificRapper route
 // 4) use cors middleware
 // 5) upload to vercel serverless functions
