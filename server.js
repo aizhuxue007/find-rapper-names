@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const PORT = 8000;
 
@@ -21,6 +22,8 @@ const rappers = {
   }
 }
 
+app.use(cors());
+
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
@@ -36,6 +39,7 @@ app.get('/:rapperName', (req, res) => {
 });
 
 // 4) use cors middleware
+
 // 5) upload to vercel serverless functions
 
 app.listen(PORT, () => {
