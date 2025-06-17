@@ -29,7 +29,12 @@ app.get('/', (req, res) => {
 app.get('/rappers', (req, res) => {
   res.json(rappers);
 });
+
 // 3) add /:specificRapper route
+app.get('/:rapperName', (req, res) => {
+  res.json(rappers[req.params.rapperName] || rappers['dylan']);
+});
+
 // 4) use cors middleware
 // 5) upload to vercel serverless functions
 
