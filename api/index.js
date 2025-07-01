@@ -40,6 +40,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/rappers", (req, res) => {
+  console.log("hitting /rappers endpoint");
   res.json(rappers);
 });
 
