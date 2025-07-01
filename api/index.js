@@ -2,7 +2,6 @@ const express = require("express");
 const cors = require("cors");
 const serverless = require("serverless-http");
 const app = express();
-const PORT = 8000;
 
 const rappers = {
   "21 savage": {
