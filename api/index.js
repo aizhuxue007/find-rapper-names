@@ -27,11 +27,11 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 
-app.get("/rappers", (req, res) => {
+app.get("/api/rappers", (req, res) => {
   res.json(rappers);
 });
 
-app.get("/:rapperName", (req, res) => {
+app.get("/api/:rapperName", (req, res) => {
   res.json(rappers[req.params.rapperName] || rappers["dylan"]);
 });
 
