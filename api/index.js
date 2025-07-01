@@ -23,6 +23,18 @@ const rappers = {
 
 app.use(cors());
 
+// Log requests for debugging
+app.use((req, res, next) => {
+  console.log(`Received request: ${req.method} ${req.url}`);
+  next();
+});
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error("Server error:", err);
+  res.status(500).json({ error: "Internal server error" });
+});
+
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
